@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vixy Discord Bot</title>
+  <script src="https://kit.fontawesome.com/0ce963a9b8.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="https://cdn.discordapp.com/avatars/1236920179942883358/f7988c339b3c0e49b8221634ebcbc31e.png?size=1024">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap');
+	* {
+	  transition: 0.3s ease-in;
+	  font-family: "Playwrite NG Modern", cursive;
+	  -webkit-tap-highlight-color: transparent;
+	}
+    body {
+      background: url(https://s8.uupload.ir/files/%E2%80%94pngtree%E2%80%94the_beautiful_shining_stars_in_1181219_mfll.jpg) no-repeat fixed;
+	  background-size: 100% 100vh;
+	  background-position: center;
+	  backdrop-filter: blur(5px);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+	  flex-direction: column;
+    }
+
+    .logo img {
+      width: 20%;
+      height: 20%;
+      margin-right: 10px;
+	  border-radius: 50rem;
+    }
+
+    .bot-info {
+      margin-left: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    .add-bot-button {
+      background: rgba(255,255,255,0.2);
+	  backdrop-filter: blur(5px);
+      color: #fff;
+      border: none;
+      padding: 5px 15px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+	  margin: 5px;
+    }
+	.add-bot-button:hover {
+	  background: rgba(255,255,255,0.4);
+	}
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.2);
+	  backdrop-filter: blur(5px);
+      padding: 20px;
+      border-radius: 10px;
+    }
+	
+	li::before {
+	  font: var(--fa-font-solid);
+	  content: "\f005  ";
+	}
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .server-support, .bot-servers, .users-feedback {
+      flex: 1 1 400px;
+    }
+
+    .server-support ul, .bot-servers ul, .users-feedback ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .server-support li, .bot-servers li, .users-feedback li {
+      margin-bottom: 10px;
+    }
+	
+	.features {
+	  display: flex;
+	  align-items: center;
+	  text-align: center;
+	  justify-content: center;
+	}
+	
+	.features .fs {
+	  width: 60%;
+	  display: flex;
+	  align-items: center;
+	  text-align: center;
+	  flex-wrap: wrap;
+      gap: 20px;
+	  padding: 20px;
+	}
+	.features .fs div {
+	  flex: 1 1 300px;
+	  background: rgba(255,255,255,0.2);
+	  backdrop-filter: blur(5px);
+	  padding: 20px;
+	  border-radius: 10px;
+	  user-select: none;
+	}
+	.features .fs div:hover {
+	  background: rgba(255,255,255,0.4);
+	  cursor: pointer;
+	  backdrop-filter: blur(10px);
+	}
+	.features .fs div i {
+	  font-size: 80px;
+	}
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255,255,255,0.2);
+	  backdrop-filter: blur(5px);
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+	  body {
+	    background-size: auto;
+	    background-position: center;
+	  }
+      .features, .server-support, .bot-servers, .users-feedback {
+        flex: 1 1 100%;
+      }
+	  .features .fs { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="https://cdn.discordapp.com/avatars/1236920179942883358/f7988c339b3c0e49b8221634ebcbc31e.png?size=1024" alt="Vixy Logo">
+        <h1>Vixy</h1>
+		<button class="add-bot-button" onclick="add()"><i class="fa-solid fa-plus"></i> Add Vixy</button>
+      </div>
+    </div>
+  </header>
+	
+  <div class="features">
+   <div class="fs">
+	<div>
+		<i class="fa-solid fa-fire"></i>
+		<h3>Giveaway</h3>
+	</div>
+	<div>
+		<i class="fa-solid fa-ticket"></i>
+		<h3>Ticket</h3>
+	</div>
+	<div>
+		<i class="fa-solid fa-lock"></i>
+		<h3>Moderation</h3>
+	</div>
+	<div>
+		<i class="fa-brands fa-blogger"></i>
+		<h3>Logging</h3>
+	</div>
+	<div>
+		<i class="fa-solid fa-heart"></i>
+		<h3>Welcomer</h3>
+	</div>
+	<div>
+		<i class="fa-solid fa-ranking-star"></i>
+		<h3>Leveling</h3>
+	</div>
+   </div>
+  </div>
+
+  <main class="container">
+    <section class="server-support section">
+      <h2>Server Support</h2>
+      <button class="add-bot-button" onclick="support()"><i class="fa-brands fa-discord"></i> VIXIUM</button>
+      <button class="add-bot-button" onclick="support2()"><i class="fa-brands fa-discord"></i> NITE</button>
+      <button class="add-bot-button" onclick="support3()"><i class="fa-brands fa-discord"></i> HYCOM</button>
+    </section>
+
+    <section class="bot-servers section">
+      <h2>Bot Servers</h2>
+      <ul>
+        <li>Over 100,000 Servers</li>
+        <li>Growing Community</li>
+        <li>Active Users</li>
+      </ul>
+    </section>
+
+    <section class="users-feedback section">
+      <h2>Users Feedback</h2>
+      <ul>
+        <li>Positive Reviews</li>
+        <li>Happy Customers</li>
+        <li>Excellent Reputation</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Vixy. All Rights Reserved.</p>
+    <a href="javascript:void(0);" onclick="support()"><i class="fab fa-discord"></i> Server Support</a>
+    <a href="javascript:void(0);" onclick="add()"><i class="fa-solid fa-plus"></i> Add Vixy</a>
+  </footer>
+<script>
+function add() {
+	window.open('https://discord.com/oauth2/authorize?client_id=1236920179942883358&permissions=8&integration_type=0&scope=bot');
+}
+function support() {
+	window.open('https://discord.gg/5nPfMn6sWW');
+}
+</script>
+</body>
+</html>
